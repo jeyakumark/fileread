@@ -1,6 +1,11 @@
-var XLSInterview = (function(){
+(function(){
+    // Establish the root object, `window` in the browser, or `global` on the server.
+    var root = this;
     
-    return {
+    // Underscore is expected to have been loaded in advance.
+    var _ = root._;
+    
+    root.XLSXInterview = {
         processWorkbook: function(wbJson){
             var recursiveExtend = function(obj) {
                 _.each(Array.prototype.slice.call(arguments, 1), function(source) {
@@ -90,5 +95,4 @@ var XLSInterview = (function(){
         }
     };
 
-})();
-
+}).call(this);

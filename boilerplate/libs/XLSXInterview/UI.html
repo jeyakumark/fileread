@@ -86,7 +86,7 @@ function handleDrop(e) {
         	var data = e.target.result;
             try {
             	var xlsx = XLSX.read(data, {type: 'binary'});
-                out.innerText = JSON.stringify(XLSInterview.processWorkbook(to_json(xlsx)), 2, 2);
+                out.innerText = JSON.stringify(XLSXInterview.processWorkbook(to_json(xlsx)), 2, 2);
             } catch(e) {
                 document.getElementById('error').innerText = String(e);
                 throw e;
