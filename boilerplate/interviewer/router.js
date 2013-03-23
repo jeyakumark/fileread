@@ -361,6 +361,16 @@ function(config, $, Backbone, _, LogItems, Sessions, sfsf,
                         alert("Could not get interview directory.");
                         return;
                     }
+                    
+                    //Create the data directory if it does not exist.
+                    sfsf.cretrieve(sfsf.joinPaths(config.appDir, 'interview_data', that.currentInterview),
+                    function(error, entry){
+    	                    if(error){
+	                        console.log(error);
+	                        alert("Could not create data directory.");
+	                    }
+                    });
+                    
                     console.log("got interview directory");
                     
                     var entryURL = ("toURL" in entry) ? entry.toURL() : entry.fullPath;
