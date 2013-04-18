@@ -1,17 +1,20 @@
-Interview
-=========
+FreeSpeech
+==========
 
-This is an app for conducting and recording interviews.
+FreeSpeech is a Cordova/Phonegap app for guiding, recording and annotating interviews.
 
-All the page transitions are logged making it possible to tell where in the recording a particular question is being answered.
+All the question transitions are logged making it possible to tell
+where in the recording a particular question is being answered.
+In addition, the interviewer can use tags to mark particular timepoints during the interview.
 
-The second half of this project will be a website that annotates the audio timeline with the page the interviewer is on,
-and that makes it possible to search through recordings for responces to particular questions.
+The app also includes a playback view that shows annotations on the audio timeline,
+and it has a view for searching through all interviews for responces to particular questions.
+
 
 File Structure
 --------------
 
-interview_app -- application root
+All interivews and data are currently stored in the `interview_app` directory.
 
 interviews -- interview definitions
 
@@ -23,6 +26,13 @@ interview_data/[interivew name]/[session id].json
 
 interview_data/[interivew name]/[session id].[tagger id].tags.json
 
+Sycning with Desktop
+--------------------
+
+DropSync can be used to sync the `interview_app` directory with a dropbox folder.
+This data can then be downloaded by FreeSpeech in a desktop browser using the File System API.
+However, this path is in progress. Audio playback uses a different API in Cordova and
+there is currently no codec for playing .amr files in browsers.
 
 Media Capture Issues
 --------------------
@@ -50,9 +60,8 @@ TODO:
 -----
 
 1. Make page links open a menu in explorer, with options to view the original question or filter by it?
-2. Add recording notice, and don't record during start form.
-3. Older adroid device does not seem to be seeking correctly.
-4. Playback and recording in traditional browsers?
+2. Older adroid device does not seem to be seeking correctly.
+3. Playback and recording in desktop browsers.
 
 
 Other tools
