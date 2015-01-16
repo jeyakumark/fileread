@@ -15,7 +15,7 @@
         Nathan Breit, Trevor Perrier, Fahad Pervaiz
     </author>
 
-    <preference name="phonegap-version" value="2.3.0" />
+    <preference name="phonegap-version" value="3.3.0" />
      
     <icon src="boilerplate/cassette.png" />
     
